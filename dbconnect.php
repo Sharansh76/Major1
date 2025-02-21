@@ -3,7 +3,7 @@
 $host = 'localhost';  // Database host
 $username = 'root';   // Database username
 $password = '';       // Database password
-$database = 'boosttech'; // Your database name
+$database = 'wellspring'; // Your database name
 
 // Create connection
 $mysqli = new mysqli($host, $username, $password, $database);

@@ -14,10 +14,10 @@
         <a href="about_us.php" class="nav-item nav-link">About</a>
 
 
-        <div class="nav-item dropdown">
+        <!-- <div class="nav-item dropdown">
             <a href="jobs.php" class="nav-link">Jobs</a>
-        </div>
-        <div class="nav-item dropdown">
+        </div> -->
+        <!-- <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
             <div class="dropdown-menu rounded-0 m-0">
                 <a href="category.html" class="dropdown-item">Job Categories</a>
@@ -25,7 +25,7 @@
                 <a href="feedback.php" class="dropdown-item">Feedback</a>
                 <a href="404.html" class="dropdown-item">404</a>
             </div>
-        </div>
+        </div> -->
         <a href="contact_us.php" class="nav-item nav-link">Contact</a>
         <!-- Login Button -->
         <a href="login.php" class="nav-item nav-link text-light bg-primary" style="margin-right:0px;">Login/Sign In<i class="fa fa-arrow-right ms-3 text-light"></i></a>

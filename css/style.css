@@ -1,8 +1,8 @@
 /********** Template CSS **********/
 :root {
-    --primary: #00B074;
+    --primary: blue;
     --secondary: #2B9BFF;
-    --light: #EFFDF5;
+    --light: blue;
     --dark: #2B3940;
 }
 
@@ -14,6 +14,20 @@
     z-index: 99;
 }
 
+#filterForm {
+    margin-left: 3vw;
+    margin-right: 2vw;
+    margin-top: 5vh;
+    background-color: gainsboro;
+    border-radius: 15px;
+    padding-left: 3vw;
+    padding-top: 2vh;
+}
+
+#search_bar {
+    padding: 15px;
+    border-radius: 20px;
+}
 
 /*** Spinner ***/
 #spinner {
@@ -29,12 +43,105 @@
     opacity: 1;
 }
 
+/* Basic styles for the profile section */
+.profile-summary {
+    width: 100%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-summary h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-summary p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.profile-summary .label {
+    font-weight: bold;
+    color: #555;
+}
+
+.profile-edit-btn {
+    float: right;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.active {
+    display: block;
+
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Form Styles */
+form input,
+form button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 95%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 /*** Button ***/
 .btn {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     transition: .5s;
+    border-radius: 50px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn.btn-primary,
@@ -66,6 +173,18 @@
     justify-content: center;
     font-weight: normal;
     border-radius: 2px;
+}
+
+.btn.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #FFFFFF;
+}
+
+.btn.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 
@@ -102,8 +221,9 @@
 }
 
 @media (max-width: 991.98px) {
+
     .navbar-dark .navbar-nav .nav-link,
-    .navbar-light .navbar-nav .nav-link  {
+    .navbar-light .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
@@ -138,7 +258,7 @@
         opacity: 0;
         visibility: hidden;
         transition: .5s;
-        
+
     }
 
     .navbar .nav-item:hover .dropdown-menu {
@@ -156,6 +276,7 @@
     position: relative;
     padding: 45px 0 45px 35px;
     border-left: 15px solid var(--primary);
+    width: 100%;
 }
 
 .header-carousel .container::before,
@@ -182,7 +303,7 @@
         position: relative;
         min-height: 500px;
     }
-    
+
     .header-carousel .owl-carousel-item img {
         position: absolute;
         width: 100%;
@@ -235,21 +356,19 @@
 .page-header {
     background: linear-gradient(rgba(43, 57, 64, .5), rgba(43, 57, 64, .5)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
+    padding: 60px 0;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
 
 
 /*** About ***/
 .about-bg {
-    background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
-    background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
-    background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
-    background-image: -o-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
-    background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
-    background-size: 5px 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -322,7 +441,6 @@
     border-color: var(--primary);
 }
 
-
 /*** Footer ***/
 .footer .btn.btn-social {
     margin-right: 5px;
@@ -332,7 +450,7 @@
     align-items: center;
     justify-content: center;
     color: var(--light);
-    border: 1px solid rgba(255,255,255,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 2px;
     transition: .3s;
 }
@@ -367,7 +485,7 @@
 }
 
 .footer .form-control {
-    border-color: rgba(255,255,255,0.5);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .footer .copyright {
@@ -390,4 +508,4364 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+/* New class for custom styles */
+.custom-style {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    margin-top: 5px;
+}
+
+/* New class for background image */
+.custom-bg {
+    background-image: url('../img/carousel-1.jpg');
+}
+
+/* New class for full-width row */
+.container-fluid {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.h1newtheme {
+    color: blue;
+}
+
+#432d {
+    margin-left: 20px;
+    /* Adjust this value to move it left */
+    margin-top: 20px;
+    /* Adjust this value to move it down */
+}
+
+.strac12 {
+    background-color: white;
+}
+
+/* Card styles */
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Form styles */
+.form-control {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    /* Darker shade on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Additional styles for icons */
+.fa {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+/* Updated styles for a modern look */
+
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    /* Light background for contrast */
+    color: #333;
+    /* Darker text for readability */
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 50px;
+    /* Rounded buttons for a modern look */
+    padding: 10px 20px;
+    /* Increased padding for better touch targets */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Smooth transitions */
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    /* Darker shade on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect on hover */
+}
+
+/* About Section Styles */
+.about-bg {
+    background: rgba(255, 255, 255, 0.8);
+    /* Light background for images */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+/* Header Styles */
+.page-header {
+    background: linear-gradient(rgba(43, 57, 64, .5), rgba(43, 57, 64, .5)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+    padding: 60px 0;
+    /* Increased padding for a more spacious feel */
+}
+
+/* Text Styles */
+h1,
+h5 {
+    font-weight: 700;
+    /* Bold headings for emphasis */
+}
+
+p {
+    line-height: 1.6;
+    /* Improved line height for readability */
+}
+
+
+/* Ankit added Login css here */
+
+#BigBag {
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+#login-leftBox {
+    width: 25%;
+    float: left;
+    /* border: 1px solid black; */
+    margin: auto;
+    height: max-content;
+    margin-top: 100px;
+    position: sticky;
+    top: 200px;
+    margin-left: 40px;
+    /* padding: 10px; */
+}
+
+
+#login-leftBox img {
+    text-align: center;
+    margin-bottom: -20px;
+    padding-left: 32%;
+    padding: 30px 5px 10px 5px;
+    margin-left: 170px;
+}
+
+h5 {
+    padding: 55px 15px 5px 15px;
+    margin-bottom: 8px;
+}
+
+#leftRegister {
+    border: 0.1px solid #6b7994;
+    border-radius: 20px;
+    background-color: white;
+    border-style: dashed;
+    width: 270px;
+    margin-left: 100px;
+}
+
+#login-leftlist {
+    margin-top: 10px;
+}
+
+li {
+    display: flex;
+    width: 90%;
+    font-size: 14px;
+    color: #6b7994;
+}
+
+i {
+    color: #18c1a3;
+    padding-right: 8px;
+    font-size: 17px;
+}
+
+#login-rightBox {
+    width: 50%;
+    margin-right: 150px;
+    margin-top: 15px;
+    margin-left: 35px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    font-family: 'Roboto Slab', serif;
+    padding: 35px 35px 25px 50px;
+    /* border: 1px solid red; */
+    height: 500px;
+    border-radius: 20px;
+    display: flex;
+}
+
+#googleRight {
+    border: 1px solid green;
+    width: 300px;
+
+}
+
+#minime {
+    border-left: 0.1px solid #6b7994;
+    height: 150px;
+    margin-top: 150px;
+    width: 150px;
+    margin-left: 50px;
+}
+
+.dot {
+    height: 35px;
+    width: 35px;
+    background-color: #fafbfe;
+    border-radius: 50%;
+    border: 1px solid gray;
+    display: inline-block;
+    margin-left: -15px;
+    margin-top: 38%;
+    text-align: center;
+    padding-top: 3px;
+}
+
+#minime {
+    display: flex;
+}
+
+.socialbtn google #find {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#LoginLeftForm {
+    width: 650px;
+    /* border: 1px solid black; */
+    margin-left: 1px;
+}
+
+#exampleInputEmail1,
+#mobile {
+    font-size: 14px;
+    /* line-height: 22px; */
+    /* padding: 9px 16px 11px; */
+    border-radius: 4px;
+}
+
+.form-label {
+    margin-top: 12px;
+    /* color: aquamarine; */
+    font-size: 12px;
+}
+
+#workStatus,
+#work {
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-around;
+    /* border: 1px solid blueviolet; */
+}
+
+#work {
+    border: 0.11px solid #6b7994;
+    width: 48%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 5px;
+}
+
+.textWrap {
+    color: #6b7994;
+    /* margin-top: -25px; */
+    /* border: 1px solid red; */
+    padding: 0px 15px 15px 15px;
+    height: 100px;
+}
+
+.textWrap>p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.textWrap>h5 {
+    color: #4b87ff;
+    padding-top: 5px;
+}
+
+#iconbag {
+    font-size: 30px;
+    margin-top: 30px;
+    padding-left: 15px;
+    padding-right: 20px;
+    color: #4b87ff;
+}
+
+.resumefont {
+    font-size: 13px;
+    color: #6b7994;
+}
+
+#button-addon1 {
+    border-radius: 25px;
+    background-color: #ff7555;
+    color: white;
+    border: none;
+    height: 30px;
+    padding-bottom: 30px;
+
+
+}
+
+#resumebox {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 300px;
+    border: 0.1px solid #6b7994;
+    height: 30px;
+    font-size: 12px;
+}
+
+.resumefont {
+    margin-top: 10px;
+    color: black;
+}
+
+.chk-label,
+.whatsappText {
+    font-size: 12px;
+    color: #6b7994;
+}
+
+.terms {
+    font-size: 12px;
+    color: #6b7994;
+    margin-top: 50px;
+}
+
+#register {
+    background-color: #4b87ff;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    padding: 10px 50px 10px 15px;
+}
+
+#pagedown {
+    display: flex;
+    margin-top: 130px;
+    width: 50%;
+    margin-left: 600px;
+    /* border: 1px solid red; */
+
+}
+
+#downDiv>p {
+    /* border: 1px solid; */
+    width: fit-content;
+    margin-left: 700px;
+    height: fit-content;
+    font-size: 10px;
+    text-align: center;
+    color: #6b7994;
+}
+
+li {
+    font-size: 12px;
+    text-decoration: none;
+    border-right: 1px solid #939dbf;
+    /* border-left: 1px solid #6b7994; */
+    width: auto;
+    padding-left: 5px;
+    padding-right: 20px;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+#tomobile {
+    text-decoration: none;
+    color: white;
+    padding-right: 0px;
+
+}
+
+#exampleCheck1 {
+    border-radius: 10px;
+    background-color: #18c1a3;
+    border: 1px solid #939dbf;
+    font-size: 10px;
+    color: white;
+}
+
+/* Ankit login css end here */
+
+
+
+
+/* Ankit signup css here */
+#signup-rightBox {
+    width: 70%;
+    margin-right: 150px;
+    margin-top: 15px;
+    margin-left: 35px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    font-family: 'Roboto Slab', serif;
+    padding: 35px 35px 25px 50px;
+    /* border: 1px solid red; */
+    height: 1500px;
+    border-radius: 20px;
+    display: flex;
+}
+
+#signup-leftBox {
+    width: 25%;
+    float: left;
+    /* border: 1px solid black; */
+    margin: auto;
+    height: max-content;
+    margin-top: 150px;
+    position: sticky;
+    top: 200px;
+    margin-left: 40px;
+    /* padding: 10px; */
+
+}
+
+#signup-leftBox img {
+    text-align: center;
+    margin-bottom: -55px;
+    padding-left: 32%;
+    padding: 30px 5px 10px 5px;
+    margin-left: 170px;
+}
+
+
+
+/* Style OTP Modal */
+#otpModal {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    max-width: fit-content;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    z-index: 999;
+}
+
+/* Ankit signup css end here */
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-bg {
+        margin-bottom: 20px;
+        /* Spacing adjustments for smaller screens */
+    }
+}
+
+@media (min-width:100px) and (max-width:330px) {
+    #BigBag {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #login-leftBox {
+        position: static;
+        width: 90%;
+        margin-top: 0px;
+
+
+    }
+
+    #login-rightBox {
+        width: 90%;
+
+    }
+
+    #signup-leftBox {
+        width: 90%;
+        position: static;
+        margin-top: 0px;
+    }
+
+    #signup-leftBox img {
+        text-align: center;
+        margin-bottom: -55px;
+        padding-left: 32%;
+        padding: 30px 5px 10px 5px;
+        margin-left: 50px;
+    }
+
+    #signup-rightBox {
+        width: 90%;
+        margin-right: 0px;
+        padding: 35px 35px 25px 50px;
+    }
+
+    #login-leftBox img {
+        text-align: center;
+        margin-bottom: -20px;
+        padding-left: 32%;
+        padding: 30px 5px 10px 5px;
+        margin-left: 80px;
+    }
+
+    #leftRegister {
+        border: 0.1px solid #6b7994;
+        border-radius: 20px;
+        background-color: white;
+        border-style: dashed;
+        width: 200px;
+        margin-left: 0px;
+    }
+}
+
+@media (min-width:330px) and (max-width:550px) {
+    #BigBag {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #login-leftBox {
+        position: static;
+        width: 90%;
+        margin-top: 0px;
+
+
+    }
+
+    #login-rightBox {
+        width: 90%;
+
+    }
+
+    #signup-leftBox {
+        position: static;
+        width: 90%;
+        margin-top: 0px;
+    }
+
+    #signup-leftBox img {
+        text-align: center;
+        margin-bottom: -55px;
+        padding-left: 32%;
+        padding: 30px 5px 10px 5px;
+        margin-left: 130px;
+    }
+
+    #signup-rightBox {
+        width: 90%;
+        margin-right: 0px;
+        padding: 35px 35px 25px 50px;
+    }
+
+    #login-leftBox img {
+        text-align: center;
+        margin-bottom: -20px;
+        padding-left: 32%;
+        padding: 30px 5px 10px 5px;
+        margin-left: 120px;
+    }
+
+    #leftRegister {
+        border: 0.1px solid #6b7994;
+        border-radius: 20px;
+        background-color: white;
+        border-style: dashed;
+        width: 360px;
+        margin-left: 0px;
+
+    }
+
+}
+
+@media (min-width:550px) and (max-width:768px) {
+    #BigBag {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #login-leftBox {
+        position: static;
+        width: 90%;
+        margin-top: 0px;
+
+    }
+
+    #login-rightBox {
+        width: 90%;
+
+    }
+
+    #signup-leftBox {
+        position: static;
+        width: 90%;
+        margin-top: 0px;
+    }
+
+    #signup-rightBox {
+        width: 90%;
+        margin-right: 0px;
+        padding: 35px 35px 25px 50px;
+    }
+
+    #login-leftBox img {
+        text-align: center;
+        margin-bottom: -20px;
+        padding-left: 32%;
+        padding: 30px 5px 10px 5px;
+        margin-left: 170px;
+
+    }
+
+    #leftRegister {
+        border: 0.1px solid #6b7994;
+        border-radius: 20px;
+        background-color: white;
+        border-style: dashed;
+        width: 270px;
+        margin-left: 150px;
+    }
+
+    #login-leftBox img {
+        text-align: center;
+        margin-bottom: -20px;
+        padding-left: 32%;
+        padding: 30px 5px 10px 5px;
+        margin-left: 220px;
+
+    }
+
+}
+
+
+@media (min-width:768px) and (max-width:1000px) {
+    #BigBag {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #login-leftBox {
+        position: static;
+        width: 90%;
+        margin-top: 0px;
+
+
+    }
+
+    #login-rightBox {
+        width: 90%;
+
+    }
+
+    #signup-leftBox {
+        position: static;
+        width: 90%;
+        margin-top: 0px;
+    }
+
+    #signup-leftBox img {
+        text-align: center;
+        margin-bottom: -55px;
+        padding-left: 32%;
+        padding: 30px 5px 10px 5px;
+        margin-left: 320px;
+    }
+
+    #signup-rightBox {
+        width: 90%;
+        margin-right: 0px;
+        padding: 35px 35px 25px 50px;
+    }
+
+    #leftRegister {
+        border: 0.1px solid #6b7994;
+        border-radius: 20px;
+        background-color: white;
+        border-style: dashed;
+        width: 270px;
+        margin-left: 250px;
+    }
+
+    #login-leftBox img {
+        text-align: center;
+        margin-bottom: -20px;
+        padding-left: 32%;
+        padding: 30px 5px 10px 5px;
+        margin-left: 320px;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* Profile Summary Styling */
+/* Container for Profile Summary */
+.profile-summary {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    /* Aligns all content to the left */
+}
+
+/* Profile Summary Header */
+.profile-summary h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: left;
+    /* Header text aligned to the left */
+    font-weight: bold;
+}
+
+/* Profile Summary Paragraphs */
+.profile-summary p {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 12px;
+    text-align: left;
+    /* Ensures paragraphs align to the left */
+}
+
+/* Labels for Each Profile Field */
+.profile-summary .label {
+    font-weight: bold;
+    color: #3498db;
+    margin-right: 5px;
+    text-align: left;
+    /* Aligns labels to the left */
+}
+
+/* Specific Styles for Profile Data Text */
+.profile-summary .data {
+    color: #2c3e50;
+    text-align: left;
+    /* Aligns data text to the left */
+}
+
+/* Improved Styling for Individual Profile Fields */
+.profile-summary p span {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Background Colors for Different Fields */
+.profile-summary .label {
+    background-color: #e8f7ff;
+    border-radius: 4px;
+    padding: 3px 5px;
+}
+
+.profile-summary .data {
+    font-size: 1em;
+    color: #555;
+    padding: 3px 5px;
+}
+
+/* Styling the icons */
+.profile-summary .label i {
+    margin-right: 8px;
+    color: #3498db;
+    font-size: 1.2em;
+}
+
+
+/* Profile Card Styling */
+/* Profile Card Styling */
+.profile-container {
+    width: 100%;
+    /* Full width for container */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Profile Card Styling */
+.profile-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    margin: 0 auto;
+    /* Center align the card */
+}
+
+/* Profile Header with Flexbox */
+.profile-header {
+    display: flex;
+    align-items: center;
+    /* Vertically align image and text */
+    gap: 20px;
+    /* Space between image and text */
+}
+
+/* Profile Image Styling */
+.profile-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* Circle shape */
+    object-fit: cover;
+    /* Ensure image fits */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Optional shadow */
+}
+
+/* Profile Info Styling */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    /* Stack text vertically */
+    justify-content: center;
+    /* Center text vertically with the image */
+}
+
+.profile-info h3 {
+    font-size: 1.5em;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.profile-info .label {
+    font-weight: bold;
+    color: #3498db;
+}
+
+.profile-info .data {
+    color: #555;
+}
+
+
+.profile-edit-btn {
+    color: #007bff;
+    /* Blue text color */
+    background: none;
+    /* No background color */
+    border: none;
+    /* No border */
+    padding: 0;
+    /* No padding */
+    font-size: 14px;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    text-decoration: underline;
+    /* Optional: to make it look like a link */
+    transition: color 0.3s ease;
+    /* Smooth color change effect */
+}
+
+.profile-edit-btn:hover {
+    color: #0056b3;
+    /* Darker blue on hover */
+    text-decoration: none;
+    /* Removes underline on hover (optional) */
+}
+
+
+
+
+
+
+
+/* / Targeted CSS for Edit Skills Button / */
+#edit-skills-btn.edit-skills-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #007BFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* / Icon Styling / */
+#edit-skills-btn.edit-skills-btn i {
+    font-size: 20px;
+    color: #007BFF;
+}
+
+/* / Hover Effect / */
+#edit-skills-btn.edit-skills-btn:hover {
+    color: #0056b3;
+}
+
+/* / Focus Effect / */
+#edit-skills-btn.edit-skills-btn:focus {
+    outline: none;
+    color: #0056b3;
+}
+
+/* edit modal css for education and skills end here */
+
+/* work experience details css start here */
+
+/* Modal Background */
+#editModal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed positioning */
+    z-index: 1000;
+    /* High z-index to appear above everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full screen width */
+    height: 100%;
+    /* Full screen height */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent dark background */
+    overflow: auto;
+    /* Scroll if content is larger than the viewport */
+    padding-top: 30px;
+    /* Spacing from the top */
+}
+
+/* Modal Content */
+#editModal .modal-content {
+    background-color: #fff;
+    /* White background */
+    margin: 5% auto;
+    /* Centered in the middle */
+    padding: 30px;
+    /* Padding inside the modal */
+    border: 1px solid #ddd;
+    /* Light gray border */
+    border-radius: 8px;
+    /* Smooth rounded corners */
+    width: 90%;
+    /* Default width */
+    max-width: 600px;
+    /* Limit maximum width */
+    font-family: 'Arial', sans-serif;
+    /* Clean font */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+}
+
+/* Close Button */
+#editModal .close-btn {
+    color: #aaa;
+    /* Light gray color */
+    float: right;
+    /* Align to the top-right */
+    font-size: 30px;
+    /* Larger size */
+    font-weight: bold;
+    /* Bold styling */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: color 0.3s ease;
+    /* Smooth transition */
+}
+
+#editModal .close-btn:hover,
+#editModal .close-btn:focus {
+    color: #000;
+    /* Black on hover or focus */
+}
+
+/* Modal Heading */
+#editModal h2 {
+    text-align: center;
+    /* Center-align the heading */
+    color: #333;
+    /* Darker text color */
+    margin-bottom: 20px;
+    /* Space below the heading */
+    font-size: 24px;
+    /* Larger font size */
+}
+
+/* Form Styling - Align items vertically */
+#editModal form {
+    display: block;
+    /* Block layout to stack elements */
+    gap: 15px;
+    /* Space between form fields */
+    padding: 0;
+}
+
+/* Input Fields */
+#editModal input[type="text"],
+#editModal input[type="email"],
+#editModal input[type="number"] {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Internal padding */
+    border: 1px solid #ccc;
+    /* Light gray border */
+    border-radius: 4px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Standard font size */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+    margin-bottom: 10px;
+    /* Add spacing between input fields */
+}
+
+#editModal input[readonly] {
+    background-color: #f9f9f9;
+    /* Light gray background */
+    cursor: not-allowed;
+    /* Show not-allowed cursor */
+}
+
+/* Labels */
+#editModal label {
+    font-weight: bold;
+    /* Bold labels */
+    font-size: 14px;
+    /* Slightly smaller font size */
+    color: #555;
+    /* Medium gray color */
+    display: block;
+    /* Block-level to align vertically */
+    margin-bottom: 5px;
+    /* Space between label and input */
+}
+
+/* Submit Button */
+#editModal .btn-primary {
+    background-color: #3498db;
+    /* Blue background */
+    color: white;
+    /* White text */
+    border: none;
+    /* No border */
+    padding: 12px 20px;
+    /* Padding for the button */
+    font-size: 16px;
+    /* Standard font size */
+    border-radius: 4px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor */
+    transition: background-color 0.3s ease;
+    /* Smooth background change */
+    margin-top: 10px;
+    /* Margin for the submit button */
+}
+
+#editModal .btn-primary:hover {
+    background-color: #2980b9;
+    /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #editModal .modal-content {
+        width: 95%;
+        /* Adjust width for smaller screens */
+    }
+
+    #editModal h2 {
+        font-size: 20px;
+        /* Reduce heading size on smaller screens */
+    }
+
+    #editModal form {
+        gap: 10px;
+        /* Reduce spacing between fields */
+    }
+}
+
+/* Edit Experience Button */
+.edit-experience-btn {
+    background-color: none;
+    /* Orange background */
+    color: white;
+    /* White text */
+    border: none;
+    /* No border */
+    padding: 10px 15px;
+    /* Padding for the button */
+    border-radius: 5px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor */
+    font-size: 16px;
+    /* Font size */
+    display: flex;
+    /* Flex to align the icon and button text */
+    align-items: center;
+    /* Align the icon vertically */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+.edit-experience-btn:hover {
+    background-color: none;
+    /* Darker orange on hover */
+}
+
+.edit-experience-btn i {
+    margin-right: 8px;
+    /* Space between icon and button text */
+}
+
+.experience-container {
+    margin: 20px 0;
+}
+
+.experience-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.experience-card h4 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.experience-card p {
+    margin: 5px 0;
+}
+
+.label {
+    font-weight: bold;
+}
+
+
+
+
+
+/* Modal Background */
+#experienceModal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed positioning */
+    z-index: 1000;
+    /* High z-index to appear above everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full screen width */
+    height: 100%;
+    /* Full screen height */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent dark background */
+    padding-top: 50px;
+    /* Spacing from the top */
+}
+
+/* Modal Content */
+#experienceModal .modal-content {
+    background-color: #fff;
+    /* White background */
+    margin: 5% auto;
+    /* Centered in the middle */
+    padding: 30px;
+    /* Padding inside the modal */
+    border: 1px solid #ddd;
+    /* Light gray border */
+    border-radius: 8px;
+    /* Smooth rounded corners */
+    width: 90%;
+    /* Default width */
+    max-width: 600px;
+    /* Limit maximum width */
+    font-family: 'Arial', sans-serif;
+    /* Clean font */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+}
+
+/* Close Button */
+#experienceModal .close-btn {
+    color: #aaa;
+    /* Light gray color */
+    float: right;
+    /* Align to the top-right */
+    font-size: 30px;
+    /* Larger size */
+    font-weight: bold;
+    /* Bold styling */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: color 0.3s ease;
+    /* Smooth transition */
+}
+
+#experienceModal .close-btn:hover,
+#experienceModal .close-btn:focus {
+    color: #000;
+    /* Black on hover or focus */
+}
+
+/* Form Styling */
+#experienceModal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input Fields */
+#experienceModal input[type="text"],
+#experienceModal input[type="date"],
+#experienceModal input[type="number"],
+#experienceModal textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#experienceModal textarea {
+    resize: vertical;
+}
+
+/* Submit Button */
+#experienceModal .btn-primary {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#experienceModal .btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* edit experice ends here */
+
+
+/* skills container css start */
+/* Skills Container */
+.skills-container {
+    width: 100%;
+    /* max-width: 900px; */
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.skills-container h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Skills List Styling */
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Individual Skill Item */
+.skills-list li {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Skill Items */
+.skills-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Style for the delete button (X) */
+/* .delete-btn {
+    margin-left: 10px;
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.delete-btn:hover {
+    color: darkred;
+} */
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .skills-list {
+        gap: 10px;
+    }
+
+    .skills-list li {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+#skills-modal .modal-heading {
+    text-align: center;
+    font-size: 24px;
+    /* Adjust size if needed */
+    font-weight: bold;
+    /* Makes the text bold */
+    color: rgba(51, 51, 51, 0.8);
+    /* Semi-transparent color */
+    margin: 20px 0;
+    /* Add some spacing around the heading */
+}
+
+/* skill close icon */
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close-icon:hover {
+    color: #ff0000;
+    /* Change color on hover */
+}
+
+/* Style for delete buttons inside the skills list */
+.delete-skill-btn {
+    background: none;
+    /* No background */
+    color: #ff0000;
+    /* Red text for emphasis */
+    border: none;
+    /* No border */
+    padding: 0;
+    /* Remove padding */
+    font-size: 16px;
+    /* Adjust the font size */
+    font-weight: bold;
+    /* Make the text bold */
+    cursor: pointer;
+    /* Show pointer on hover */
+    margin-left: 10px;
+    /* Space between the skill and the button */
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
+}
+
+/* Hover effect for the delete button */
+.delete-skill-btn:hover {
+    transform: scale(1.1);
+    /* Slightly enlarge the text */
+}
+
+/* Active (pressed) state for the delete button */
+.delete-skill-btn:active {
+    transform: scale(1);
+    /* Reset scale on click */
+}
+
+
+/* skill add btn css */
+#add-skill-btn {
+    background-color: #28a745;
+    /* Green color for the button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    /* Reduced padding to make the button smaller */
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+    width: 40%;
+    /* Ensures width adjusts based on content */
+    min-width: 40%;
+    /* Optional: Set a minimum width for consistency */
+    display: block;
+    /* Makes the button a block element */
+    margin-left: auto;
+    /* Centers the button horizontally */
+    margin-right: auto;
+    /* Centers the button horizontally */
+}
+
+#add-skill-btn:hover {
+    background-color: #218838;
+    /* Darker shade for hover effect */
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+#add-skill-btn:active {
+    background-color: #1e7e34;
+    /* Even darker shade for active state */
+    transform: scale(1);
+    /* Reset zoom on click */
+}
+
+#add-skill-btn:focus {
+    outline: none;
+    /* Remove default focus outline */
+    box-shadow: 0 0 5px #28a745;
+    /* Add a custom focus effect */
+}
+
+
+
+#new-skill-input {
+    padding: 5px 10px;
+    /* Smaller padding for a compact input */
+    font-size: 14px;
+    /* Adjust the font size for a smaller text */
+    width: 40%;
+    /* Set the width to 50% */
+    border: 1px solid #ccc;
+    /* Light border color */
+    border-radius: 5px;
+    /* Slightly rounded corners */
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect width */
+    margin-top: 5px;
+    /* Optional: Add some space above the input */
+    display: block;
+    /* Ensures the input behaves as a block element */
+    margin-left: auto;
+    /* Center the input horizontally */
+    margin-right: auto;
+    /* Center the input horizontally */
+}
+
+#new-skill-input:focus {
+    outline: none;
+    /* Remove default focus outline */
+    border-color: #007bff;
+    /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    /* Optional focus effect */
+}
+
+
+
+
+/* css of project details start */
+/* Container styling */
+.project-details-container {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.project-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.project-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #007bff;
+    /* Blue color for the project title */
+    text-transform: capitalize;
+}
+
+
+.project-card-summary {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.project-card-status,
+.project-card-duration {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.no-projects {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+}
+
+
+/* css of project details end */
+
+
+/* css of ski */
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Close Button Styles */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* hello */
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add styles for the "Add More Education Details" button */
+
+/* Container for the education details */
+.education-details {
+    background-color: #fff;
+    /* White background for clean look */
+    border: 1px solid #e0e0e0;
+    /* Light border for separation */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Reduced padding for tighter spacing */
+    margin: 20px auto;
+    /* Centered with automatic margins on left and right */
+    width: 100%;
+    /* Full width for smaller screens */
+    max-width: 100%;
+    /* Maximum width for large screens */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow effect */
+    font-family: 'Roboto', sans-serif;
+    /* Modern font */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for hover effects */
+}
+
+.education-details:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Stronger shadow on hover */
+}
+
+/* Title of the education details */
+.education-details h3 {
+    font-size: 24px;
+    /* Adjusted font size */
+    color: #2c3e50;
+    /* Darker color for better readability */
+    margin-bottom: 15px;
+    /* Reduced margin between title and fields */
+    border-bottom: 3px solid #3498db;
+    /* Blue border for visual emphasis */
+    padding-bottom: 8px;
+    text-align: center;
+    /* Center the title */
+}
+
+/* General paragraph styling for education details */
+.education-details p {
+    font-size: 16px;
+    /* Smaller font for compact layout */
+    color: #7f8c8d;
+    /* Grayish color for text */
+    margin: 4px 0;
+    /* Reduced margin for compactness */
+    padding: 6px 0;
+    /* Reduced padding for compactness */
+    line-height: 1.4;
+    /* Adjusted line height for better spacing */
+    display: flex;
+    justify-content: space-between;
+    /* Space out the label and value */
+    align-items: center;
+    /* Align items vertically */
+    border-bottom: 1px solid #ecf0f1;
+    /* Light border between fields */
+}
+
+/* Label style for the education fields (without strong tag) */
+.education-details .label {
+    color: #34495e;
+    /* Darker text for field names */
+    font-weight: 600;
+    /* Slightly bolder for emphasis */
+    text-transform: uppercase;
+    /* Uppercase for better readability */
+    margin-right: 8px;
+    /* Reduced space between label and value */
+    display: inline-block;
+    /* Ensures labels are aligned better */
+    width: 35%;
+    /* Set width to control space for the label */
+}
+
+/* Value style for the education fields */
+.education-details p span {
+    color: #2c3e50;
+    /* Darker color for values */
+    font-weight: 400;
+    /* Lighter weight for value text */
+    width: 60%;
+    /* Set width for the value for better alignment */
+}
+
+/* Removing the border for the last field */
+.education-details p:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect for each education field */
+.education-details p:hover {
+    background-color: #f1f1f1;
+    /* Light gray background on hover */
+    border-left: 5px solid #3498db;
+    /* Blue left border on hover */
+    padding-left: 12px;
+    /* Slight padding to match the border effect */
+}
+
+/* Optional icon styling */
+.education-details p i {
+    margin-right: 12px;
+    /* Space between icon and text */
+    color: #3498db;
+    /* Blue icon color */
+}
+
+/* Add styles for the "Add More Education Details" button */
+#add-education-btn {
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    /* White text */
+    padding: 10px 20px;
+    /* Padding for button */
+    border: none;
+    /* No border */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s;
+    /* Smooth transition on hover */
+}
+
+#add-education-btn:hover {
+    background-color: #45a049;
+    /* Darker green when hovered */
+}
+
+#add-education-btn:focus {
+    outline: none;
+    /* Remove outline when the button is focused */
+}
+
+#add-education-btn:active {
+    background-color: #3e8e41;
+    /* Even darker green when clicked */
+}
+
+/* Responsive Design: For mobile and tablet */
+@media (max-width: 768px) {
+    .education-details {
+        padding: 15px;
+        /* Reduced padding for smaller screens */
+        width: 90%;
+        /* Slightly increase width for smaller screens */
+    }
+
+    .education-details h3 {
+        font-size: 22px;
+        /* Slightly smaller title */
+    }
+
+    .education-details p {
+        font-size: 14px;
+        /* Smaller font size for mobile */
+    }
+}
+
+
+
+/* Styling for the left panel */
+/* Sidebar Styling */
+
+/* Sidebar Styles */
+
+.left-panel {
+    width: 250px;
+    background-color: #f8f9fa;
+    height: calc(100vh - 50px);
+    /* Full height minus navbar height */
+    position: relative;
+    top: 50px;
+    left: 0;
+    overflow-y: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    overflow-y: auto;
+    /* Allows scrolling if content exceeds height */
+
+    border-right: 1px solid #ddd;
+
+}
+
+.left-panel h2 {
+    font-size: 24px;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.left-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-panel ul li {
+    margin: 15px 0;
+}
+
+.left-panel ul li a {
+    text-decoration: none;
+    color: #343a40;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.left-panel ul li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Hide submenu by default */
+.sub-menu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+}
+
+/* Show submenu on hover */
+.submenu:hover .sub-menu {
+    display: block;
+}
+
+
+/* Arrow rotation */
+.rotate {
+    transform: rotate(180deg);
+}
+
+/* Submenu items styling */
+.sub-menu li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px;
+    display: block;
+}
+
+/* services end */
+/* topmenu.php css */
+#tmlogin45 {
+    margin-right: 5rem;
+}
+
+#tmlogin42:focus {
+    box-shadow: 0 0 5px blue;
+    color: white;
+    outline: none;
+}
+
+.navbar-profile-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+
+
+
+/* Ankit badhani sidebar relaetd cod ein profile section start*/
+/* sidebar from prfoile css  start */
+
+/* Sidebar styles */
+
+#sidebar h2 {
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid #495057;
+}
+
+#sidebar .list-group-item {
+    border: none;
+    border-bottom: 1px solid #495057;
+}
+
+#sidebar .list-group-item:last-child {
+    border-bottom: none;
+}
+
+#sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+#sidebar a:hover {
+    background-color: #107eec;
+    /* Hover effect */
+}
+
+
+/* end css of sidebar form profile */
+
+
+#sidebar .list-group-item {
+    border: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+#sidebar .list-group-item:hover {
+    background-color: #495057;
+}
+
+#sidebar .nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+#sidebar .nav-link:hover {
+    color: #ffc107;
+}
+
+#sidebar .caret-icon {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+#sidebar .submenu {
+    display: none;
+}
+
+#sidebar .open .submenu {
+    display: block;
+}
+
+#sidebar .open .caret-icon {
+    transform: rotate(180deg);
+}
+
+/* Ankit badhani sidebar relaetd code in profile section end*/
+
+
+/* Ankit applied_jobs.php css is here start */
+/* Isolated styles for the #unique-id parent container */
+/* Isolated styles for the #unique-id parent container */
+#unique-id {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Styling for the main heading */
+#unique-id h1 {
+    color: #333;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* Card container for grid layout */
+#unique-id .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Individual job card */
+#unique-id .job-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Card hover effect */
+#unique-id .job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card header */
+#unique-id .card-header {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Card body */
+#unique-id .card-body {
+    padding: 20px;
+    color: #333;
+}
+
+/* Card body text styling */
+#unique-id .card-body p {
+    margin: 10px 0;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* Resume link styling */
+#unique-id .resume-link {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#unique-id .resume-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #unique-id .card-body p {
+        font-size: 14px;
+    }
+}
+
+
+
+/* applied_jobs.css end here */
+
+
+
+
+
+
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/* profile.php  content and sidebar class and sidebar id related clases star here */
+
+/* Content area styles */
+#content {
+    margin-left: 250px;
+    /* Same as sidebar width */
+    padding: 20px;
+    width: calc(100% - 250px);
+    /* Adjust width to exclude sidebar */
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    /* Light background for contrast */
+    min-height: 100vh;
+    /* Full height for content area */
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Sidebar default styles */
+#sidebar {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 250px;
+    height: 100%;
+    max-height: max-content;
+    background-color: white;
+    overflow-y: hidden;
+    overflow: visible;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hidden sidebar for small screens */
+#sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+/* Visible sidebar */
+#sidebar.visible {
+    transform: translateX(0);
+}
+
+/* Hamburger icon styles */
+.hamburger-icon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 10px;
+    background: none;
+    border: none;
+    color: #000;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+
+    /* Adjust content when sidebar is hidden */
+    #content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .hamburger-icon {
+        display: block;
+        /* Show hamburger icon on small screens */
+    }
+
+    #sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    /* When sidebar is visible, adjust content */
+    #sidebar.hidden {
+        transform: translateX(0);
+    }
+
+    #content.sidebar-open {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 769px) {
+
+    /* Sidebar is visible on desktop */
+    #sidebar.visible {
+        transform: translateX(0);
+    }
+
+    /* Adjust content when sidebar is hidden */
+    #content.sidebar-open {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* profile.php  content and sidebar class and sidebar id related clases end here */
+
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+
+
+
+
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*----------------------x-education section in profile css starts here by ankit-------  */
+
+
+/* Container for the education details */
+
+.education-details {
+    background-color: #fff;
+    /* White background for clean look */
+    border: 1px solid #e0e0e0;
+    /* Light border for separation */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Reduced padding for tighter spacing */
+    margin: 20px auto;
+    /* Centered with automatic margins on left and right */
+    width: 100%;
+    /* Set a fixed width for better centering */
+    max-width: 100%;
+    /* Maximum width for large screens */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Deeper shadow for a more elevated effect */
+    font-family: 'Roboto', sans-serif;
+    /* More modern font */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
+}
+
+.education-details:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow on hover */
+}
+
+/* Title of the education details */
+.education-details h3 {
+    font-size: 24px;
+    /* Adjusted font size */
+    color: #2c3e50;
+    /* Darker color for better readability */
+    margin-bottom: 15px;
+    /* Reduced margin between title and fields */
+    border-bottom: 3px solid #3498db;
+    /* Blue border for visual emphasis */
+    padding-bottom: 8px;
+    text-align: center;
+    /* Center the title */
+}
+
+.education-details h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: left;
+    /* Header text aligned to the left */
+    font-weight: bold;
+}
+
+
+/* General paragraph styling for education details */
+.education-details p {
+    font-size: 16px;
+    /* Slightly smaller font for a more compact layout */
+    color: #7f8c8d;
+    /* Grayish color for text */
+    margin: 4px 0;
+    /* Reduced margin for compactness */
+    padding: 6px 0;
+    /* Reduced padding for compactness */
+    line-height: 1.4;
+    /* Adjusted line height for better spacing */
+}
+
+/* Label style for the education fields (without strong tag) */
+.education-details .label {
+    color: #34495e;
+    /* Darker text for field names */
+    font-weight: 600;
+    /* Slightly bolder for emphasis */
+    text-transform: uppercase;
+    /* Uppercase for better readability */
+    margin-right: 8px;
+    /* Reduced space between label and value */
+    display: inline-block;
+    /* Ensures labels are aligned better */
+    width: 35%;
+    /* Set width to control space for the label */
+}
+
+/* Value style for the education fields */
+.education-details p span {
+    color: #2c3e50;
+    /* Darker color for values */
+    font-weight: 400;
+    /* Lighter weight for value text */
+    width: 60%;
+    /* Set width for the value for better alignment */
+}
+
+/* Style for each education field with a flex layout */
+.education-details p {
+    display: flex;
+    justify-content: space-between;
+    /* Space out the label and value */
+    align-items: center;
+    /* Align items in the center */
+    border-bottom: 1px solid #ecf0f1;
+    /* Light border between fields */
+}
+
+/* Removing the border for the last field */
+.education-details p:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect for each education field */
+.education-details p:hover {
+    background-color: #f1f1f1;
+    /* Light gray background on hover */
+    border-left: 5px solid #3498db;
+    /* Blue left border on hover */
+    padding-left: 12px;
+    /* Slight padding to match the border effect */
+}
+
+/* Optional icon styling */
+.education-details p i {
+    margin-right: 12px;
+    /* Space between icon and text */
+    color: #3498db;
+    /* Blue icon color */
+}
+
+/* styles.css */
+
+/* Education Section Header and Button */
+.education-details h3 {
+    display: inline-block;
+}
+
+#educationDetails {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#educationDetails h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#educationDetails .edit-btn {
+    float: right;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#educationDetails .edit-btn:hover {
+    background: #0056b3;
+}
+
+#educationDetails .education-details {
+    margin-top: 20px;
+}
+
+.education-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.education-detail-row span {
+    font-size: 16px;
+}
+
+#edit-education-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    max-height: 90vh; /* Limit modal height to 90% of the viewport */
+    top: 60%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow-y: auto; /* Add vertical scroll when content overflows */
+    overflow-x: hidden; /* Prevent horizontal scrolling (optional) */
+    box-sizing: border-box; /* Ensure padding doesn't affect height */
+}
+
+
+#edit-education-modal.active {
+    display: block;
+}
+
+#edit-education-modal input[type=text],
+#edit-education-modal input[type=number],
+#edit-education-modal input[type=date] {
+    padding: 8px;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#overlay.active {
+    display: block;
+}
+
+#edit-education-modal form input,
+#edit-education-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#edit-education-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#edit-education-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* add modal */
+
+#add-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    max-height: 90vh; /* Limit modal height to 90% of the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow-y: auto; /* Add vertical scroll when content overflows */
+    overflow-x: hidden; /* Prevent horizontal scrolling (optional) */
+    box-sizing: border-box; /* Ensure padding doesn't affect height */
+}
+
+
+#add-modal.active {
+    display: block;
+}
+
+
+#add-modal input[type=text],
+#add-modal input[type=number],
+#add-modal input[type=date] {
+    padding: 8px;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#overlay.active {
+    display: block;
+}
+
+#add-modal form input,
+#add-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#add-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#add-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#education-head-edit-delete-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#education-edit-delete-btns {
+    display: inline;
+}
+
+/*----------------------x-education section in profile css end here by ankit----------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+
+
+
+
+
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*----------------------x-experience section in profile css end here by ankit----------  */
+
+
+
+
+.experience-details {
+    background-color: #fff;
+    /* White background for clean look */
+    border: 1px solid #e0e0e0;
+    /* Light border for separation */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Reduced padding for tighter spacing */
+    margin: 20px auto;
+    /* Centered with automatic margins on left and right */
+    width: 100%;
+    /* Set a fixed width for better centering */
+    max-width: 100%;
+    /* Maximum width for large screens */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Deeper shadow for a more elevated effect */
+    font-family: 'Roboto', sans-serif;
+    /* More modern font */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
+}
+
+.experience-details:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow on hover */
+}
+
+/* Title of the experience details */
+.experience-details h3 {
+    font-size: 24px;
+    /* Adjusted font size */
+    color: #2c3e50;
+    /* Darker color for better readability */
+    margin-bottom: 15px;
+    /* Reduced margin between title and fields */
+    border-bottom: 3px solid #3498db;
+    /* Blue border for visual emphasis */
+    padding-bottom: 8px;
+    text-align: center;
+    /* Center the title */
+}
+
+.experience-details h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: left;
+    /* Header text aligned to the left */
+    font-weight: bold;
+}
+
+
+/* General paragraph styling for experience details */
+.experience-details p {
+    font-size: 16px;
+    /* Slightly smaller font for a more compact layout */
+    color: #7f8c8d;
+    /* Grayish color for text */
+    margin: 4px 0;
+    /* Reduced margin for compactness */
+    padding: 6px 0;
+    /* Reduced padding for compactness */
+    line-height: 1.4;
+    /* Adjusted line height for better spacing */
+}
+
+/* Label style for the experience fields (without strong tag) */
+.experience-details .label {
+    color: #34495e;
+    /* Darker text for field names */
+    font-weight: 600;
+    /* Slightly bolder for emphasis */
+    text-transform: uppercase;
+    /* Uppercase for better readability */
+    margin-right: 8px;
+    /* Reduced space between label and value */
+    display: inline-block;
+    /* Ensures labels are aligned better */
+    width: 35%;
+    /* Set width to control space for the label */
+}
+
+/* Value style for the experience fields */
+.experience-details p span {
+    color: #2c3e50;
+    /* Darker color for values */
+    font-weight: 400;
+    /* Lighter weight for value text */
+    width: 60%;
+    /* Set width for the value for better alignment */
+}
+
+/* Style for each experience field with a flex layout */
+.experience-details p {
+    display: flex;
+    justify-content: space-between;
+    /* Space out the label and value */
+    align-items: center;
+    /* Align items in the center */
+    border-bottom: 1px solid #ecf0f1;
+    /* Light border between fields */
+}
+
+/* Removing the border for the last field */
+.experience-details p:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect for each experience field */
+.experience-details p:hover {
+    background-color: #f1f1f1;
+    /* Light gray background on hover */
+    border-left: 5px solid #3498db;
+    /* Blue left border on hover */
+    padding-left: 12px;
+    /* Slight padding to match the border effect */
+}
+
+/* Optional icon styling */
+.experience-details p i {
+    margin-right: 12px;
+    /* Space between icon and text */
+    color: #3498db;
+    /* Blue icon color */
+}
+
+/* styles.css */
+
+/* experience Section Header and Button */
+.experience-details h3 {
+    display: inline-block;
+}
+
+#experienceDetails {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#experienceDetails h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#experienceDetails .edit-btn {
+    float: right;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#experienceDetails .edit-btn:hover {
+    background: #0056b3;
+}
+
+#experienceDetails .experience-details {
+    margin-top: 20px;
+}
+
+.experience-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.experience-detail-row span {
+    font-size: 16px;
+}
+
+#edit-experience-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    max-height: 90vh; /* Limit modal height to 90% of the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow-y: auto; /* Add vertical scroll when content overflows */
+    overflow-x: hidden; /* Prevent horizontal scrolling (optional) */
+    box-sizing: border-box; /* Ensure padding doesn't affect height */
+}
+
+
+#edit-experience-modal.experience-active {
+    display: block;
+}
+
+#edit-experience-modal input[type=text],
+#edit-experience-modal input[type=number],
+#edit-experience-modal input[type=date] {
+    padding: 8px;
+}
+
+#experience-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#experience-overlay.experience-active {
+    display: block;
+}
+
+#edit-experience-modal form input,
+#edit-experience-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#edit-experience-modal form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#edit-experience-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#edit-experience-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* add modal */
+
+#add-experience-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    max-height: 90vh; /* Limit modal height to 90% of the viewport */
+    top: 55%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow-y: auto; /* Add vertical scroll when content overflows */
+    overflow-x: hidden; /* Prevent horizontal scrolling (optional) */
+    box-sizing: border-box; /* Ensure padding doesn't affect height */
+}
+
+
+#add-experience-modal.experience-active {
+    display: block;
+}
+
+#add-experience-modal input[type=text],
+#add-experience-modal input[type=number],
+#add-experience-modal input[type=date] {
+    padding: 8px;
+}
+
+#experience-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#experience-overlay.experience-active {
+    display: block;
+}
+
+#add-experience-modal form input,
+#add-experience-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#add-experience-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#add-experience-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#experience-head-edit-delete-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#experience-edit-delete-btns {
+    display: inline;
+}
+
+
+
+/*----------------------x-experience section in profile css end here by ankit----------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+
+
+
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*----------------------x-project section in profile css end here by ankit----------  */
+
+
+.project-details {
+    background-color: #fff;
+    /* White background for clean look */
+    border: 1px solid #e0e0e0;
+    /* Light border for separation */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Reduced padding for tighter spacing */
+    margin: 20px auto;
+    /* Centered with automatic margins on left and right */
+    width: 100%;
+    /* Set a fixed width for better centering */
+    max-width: 100%;
+    /* Maximum width for large screens */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Deeper shadow for a more elevated effect */
+    font-family: 'Roboto', sans-serif;
+    /* More modern font */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
+}
+
+.project-details:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow on hover */
+}
+
+/* Title of the project details */
+.project-details h3 {
+    font-size: 24px;
+    /* Adjusted font size */
+    color: #2c3e50;
+    /* Darker color for better readability */
+    margin-bottom: 15px;
+    /* Reduced margin between title and fields */
+    border-bottom: 3px solid #3498db;
+    /* Blue border for visual emphasis */
+    padding-bottom: 8px;
+    text-align: center;
+    /* Center the title */
+}
+
+.project-details h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: left;
+    /* Header text aligned to the left */
+    font-weight: bold;
+}
+
+
+/* General paragraph styling for project details */
+.project-details p {
+    font-size: 16px;
+    /* Slightly smaller font for a more compact layout */
+    color: #7f8c8d;
+    /* Grayish color for text */
+    margin: 4px 0;
+    /* Reduced margin for compactness */
+    padding: 6px 0;
+    /* Reduced padding for compactness */
+    line-height: 1.4;
+    /* Adjusted line height for better spacing */
+}
+
+/* Label style for the project fields (without strong tag) */
+.project-details .label {
+    color: #34495e;
+    /* Darker text for field names */
+    font-weight: 600;
+    /* Slightly bolder for emphasis */
+    text-transform: uppercase;
+    /* Uppercase for better readability */
+    margin-right: 8px;
+    /* Reduced space between label and value */
+    display: inline-block;
+    /* Ensures labels are aligned better */
+    width: 35%;
+    /* Set width to control space for the label */
+}
+
+/* Value style for the project fields */
+.project-details p span {
+    color: #2c3e50;
+    /* Darker color for values */
+    font-weight: 400;
+    /* Lighter weight for value text */
+    width: 60%;
+    /* Set width for the value for better alignment */
+}
+
+/* Style for each project field with a flex layout */
+.project-details p {
+    display: flex;
+    justify-content: space-between;
+    /* Space out the label and value */
+    align-items: center;
+    /* Align items in the center */
+    border-bottom: 1px solid #ecf0f1;
+    /* Light border between fields */
+}
+
+/* Removing the border for the last field */
+.project-details p:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect for each project field */
+.project-details p:hover {
+    background-color: #f1f1f1;
+    /* Light gray background on hover */
+    border-left: 5px solid #3498db;
+    /* Blue left border on hover */
+    padding-left: 12px;
+    /* Slight padding to match the border effect */
+}
+
+/* Optional icon styling */
+.project-details p i {
+    margin-right: 12px;
+    /* Space between icon and text */
+    color: #3498db;
+    /* Blue icon color */
+}
+
+/* styles.css */
+
+/* project Section Header and Button */
+.project-details h3 {
+    display: inline-block;
+}
+
+#projectDetails {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#projectDetails h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#projectDetails .edit-btn {
+    float: right;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#projectDetails .edit-btn:hover {
+    background: #0056b3;
+}
+
+#projectDetails .project-details {
+    margin-top: 20px;
+}
+
+.project-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.project-detail-row span {
+    font-size: 16px;
+}
+
+#edit-project-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+#edit-project-modal.project-active {
+    display: block;
+}
+
+#edit-project-modal input[type=text],
+#edit-project-modal input[type=number],
+#edit-project-modal input[type=date] {
+    padding: 8px;
+}
+
+#project-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#project-overlay.project-active {
+    display: block;
+}
+
+#edit-project-modal form input,
+#edit-project-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#edit-project-modal form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#edit-project-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#edit-project-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* add modal */
+
+#add-project-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+#add-project-modal.project-active {
+    display: block;
+}
+
+#add-project-modal input[type=text],
+#add-project-modal input[type=number],
+#add-project-modal input[type=date] {
+    padding: 8px;
+}
+
+#add-project-modal form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#project-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#project-overlay.project-active {
+    display: block;
+}
+
+#add-project-modal form input,
+#add-project-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#add-project-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#add-project-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#project-head-edit-delete-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#project-edit-delete-btns {
+    display: inline;
+}
+
+
+
+/*----------------------x-project section in profile css end here by ankit----------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+
+
+
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*----------------------x-social connects section in profile css end here by ankit----------  */
+
+
+
+.social-details {
+    background-color: #fff;
+    /* White background for clean look */
+    border: 1px solid #e0e0e0;
+    /* Light border for separation */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Reduced padding for tighter spacing */
+    margin: 20px auto;
+    /* Centered with automatic margins on left and right */
+    width: 100%;
+    /* Set a fixed width for better centering */
+    max-width: 100%;
+    /* Maximum width for large screens */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Deeper shadow for a more elevated effect */
+    font-family: 'Roboto', sans-serif;
+    /* More modern font */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
+}
+
+.social-details:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow on hover */
+}
+
+/* Title of the social details */
+.social-details h3 {
+    font-size: 24px;
+    /* Adjusted font size */
+    color: #2c3e50;
+    /* Darker color for better readability */
+    margin-bottom: 15px;
+    /* Reduced margin between title and fields */
+    border-bottom: 3px solid #3498db;
+    /* Blue border for visual emphasis */
+    padding-bottom: 8px;
+    text-align: center;
+    /* Center the title */
+}
+
+.social-details h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: left;
+    /* Header text aligned to the left */
+    font-weight: bold;
+}
+
+
+/* General paragraph styling for social details */
+.social-details p {
+    font-size: 16px;
+    /* Slightly smaller font for a more compact layout */
+    color: #7f8c8d;
+    /* Grayish color for text */
+    margin: 4px 0;
+    /* Reduced margin for compactness */
+    padding: 6px 0;
+    /* Reduced padding for compactness */
+    line-height: 1.4;
+    /* Adjusted line height for better spacing */
+}
+
+/* Label style for the social fields (without strong tag) */
+.social-details .label {
+    color: #34495e;
+    /* Darker text for field names */
+    font-weight: 600;
+    /* Slightly bolder for emphasis */
+    text-transform: uppercase;
+    /* Uppercase for better readability */
+    margin-right: 8px;
+    /* Reduced space between label and value */
+    display: inline-block;
+    /* Ensures labels are aligned better */
+    width: 35%;
+    /* Set width to control space for the label */
+}
+
+/* Value style for the social fields */
+.social-details p span {
+    color: #2c3e50;
+    /* Darker color for values */
+    font-weight: 400;
+    /* Lighter weight for value text */
+    width: 60%;
+    /* Set width for the value for better alignment */
+}
+
+/* Style for each social field with a flex layout */
+.social-details p {
+    display: flex;
+    justify-content: space-between;
+    /* Space out the label and value */
+    align-items: center;
+    /* Align items in the center */
+    border-bottom: 1px solid #ecf0f1;
+    /* Light border between fields */
+}
+
+/* Removing the border for the last field */
+.social-details p:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect for each social field */
+.social-details p:hover {
+    background-color: #f1f1f1;
+    /* Light gray background on hover */
+    border-left: 5px solid #3498db;
+    /* Blue left border on hover */
+    padding-left: 12px;
+    /* Slight padding to match the border effect */
+}
+
+/* Optional icon styling */
+.social-details p i {
+    margin-right: 12px;
+    /* Space between icon and text */
+    color: #3498db;
+    /* Blue icon color */
+}
+
+/* styles.css */
+
+/* social Section Header and Button */
+.social-details h3 {
+    display: inline-block;
+}
+
+#socialDetails {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#socialDetails h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#socialDetails .edit-btn {
+    float: right;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#socialDetails .edit-btn:hover {
+    background: #0056b3;
+}
+
+#socialDetails .social-details {
+    margin-top: 20px;
+}
+
+.social-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.social-detail-row span {
+    font-size: 16px;
+}
+
+#edit-social-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+#edit-social-modal.social-active {
+    display: block;
+}
+
+#edit-social-modal input[type=text],
+#edit-social-modal input[type=number],
+#edit-social-modal input[type=date] {
+    padding: 8px;
+}
+
+#social-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#social-overlay.social-active {
+    display: block;
+}
+
+#edit-social-modal form input,
+#edit-social-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#edit-social-modal form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#edit-social-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#edit-social-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* add modal */
+
+#add-social-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+#add-social-modal.social-active {
+    display: block;
+}
+
+#add-social-modal input[type=text],
+#add-social-modal input[type=number],
+#add-social-modal input[type=date] {
+    padding: 8px;
+}
+
+#social-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#social-overlay.social-active {
+    display: block;
+}
+
+#add-social-modal form input,
+#add-social-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#add-social-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#add-social-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#social-head-edit-delete-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#social-edit-delete-btns {
+    display: inline;
+}
+
+
+
+
+
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*----------------------x-Social connects section in profile css end here by ankit----------  */
+
+
+
+
+
+
+
+
+
+/*----------------------x-Profile details section in profile css starts here by ankit----------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+
+
+
+
+.profile-details {
+    background-color: #fff;
+    /* White background for clean look */
+    border: 1px solid #e0e0e0;
+    /* Light border for separation */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Reduced padding for tighter spacing */
+    margin: 20px auto;
+    /* Centered with automatic margins on left and right */
+    width: 100%;
+    /* Set a fixed width for better centering */
+    max-width: 100%;
+    /* Maximum width for large screens */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Deeper shadow for a more elevated effect */
+    font-family: 'Roboto', sans-serif;
+    /* More modern font */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
+}
+
+.profile-details:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow on hover */
+}
+
+/* Title of the profile details */
+.profile-details h3 {
+    font-size: 24px;
+    /* Adjusted font size */
+    color: #2c3e50;
+    /* Darker color for better readability */
+    margin-bottom: 15px;
+    /* Reduced margin between title and fields */
+    border-bottom: 3px solid #3498db;
+    /* Blue border for visual emphasis */
+    padding-bottom: 8px;
+    text-align: center;
+    /* Center the title */
+}
+
+.profile-details h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: left;
+    /* Header text aligned to the left */
+    font-weight: bold;
+}
+
+
+/* General paragraph styling for profile details */
+.profile-details p {
+    font-size: 16px;
+    /* Slightly smaller font for a more compact layout */
+    color: #7f8c8d;
+    /* Grayish color for text */
+    margin: 4px 0;
+    /* Reduced margin for compactness */
+    padding: 6px 0;
+    /* Reduced padding for compactness */
+    line-height: 1.4;
+    /* Adjusted line height for better spacing */
+}
+
+/* Label style for the profile fields (without strong tag) */
+.profile-details .label {
+    color: #34495e;
+    /* Darker text for field names */
+    font-weight: 600;
+    /* Slightly bolder for emphasis */
+    text-transform: uppercase;
+    /* Uppercase for better readability */
+    margin-right: 8px;
+    /* Reduced space between label and value */
+    display: inline-block;
+    /* Ensures labels are aligned better */
+    width: 35%;
+    /* Set width to control space for the label */
+}
+
+/* Value style for the profile fields */
+.profile-details p span {
+    color: #2c3e50;
+    /* Darker color for values */
+    font-weight: 400;
+    /* Lighter weight for value text */
+    width: 60%;
+    /* Set width for the value for better alignment */
+}
+
+/* Style for each profile field with a flex layout */
+.profile-details p {
+    display: flex;
+    justify-content: space-between;
+    /* Space out the label and value */
+    align-items: center;
+    /* Align items in the center */
+    border-bottom: 1px solid #ecf0f1;
+    /* Light border between fields */
+}
+
+/* Removing the border for the last field */
+.profile-details p:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect for each profile field */
+.profile-details p:hover {
+    background-color: #f1f1f1;
+    /* Light gray background on hover */
+    border-left: 5px solid #3498db;
+    /* Blue left border on hover */
+    padding-left: 12px;
+    /* Slight padding to match the border effect */
+}
+
+/* Optional icon styling */
+.profile-details p i {
+    margin-right: 12px;
+    /* Space between icon and text */
+    color: #3498db;
+    /* Blue icon color */
+}
+
+/* styles.css */
+
+/* profile Section Header and Button */
+.profile-details h3 {
+    display: inline-block;
+}
+
+#profileDetails {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#profileDetails h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#profileDetails .edit-btn {
+    float: right;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#profileDetails .edit-btn:hover {
+    background: #0056b3;
+}
+
+#profileDetails .profile-details {
+    margin-top: 20px;
+}
+
+.profile-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-detail-row span {
+    font-size: 16px;
+}
+
+#edit-profile-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    max-height: 90vh; /* Limit modal height to 90% of the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow-y: auto; /* Add vertical scroll when content overflows */
+    overflow-x: hidden; /* Prevent horizontal scrolling (optional) */
+    box-sizing: border-box; /* Ensure padding doesn't affect height */
+}
+
+
+#edit-profile-modal.profile-active {
+    display: block;
+}
+
+#edit-profile-modal input[type=text],
+#edit-profile-modal input[type=number],
+#edit-profile-modal input[type=date] {
+    padding: 8px;
+}
+
+#profile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#profile-overlay.profile-active {
+    display: block;
+}
+
+#edit-profile-modal form input,
+#edit-profile-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#edit-profile-modal form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#edit-profile-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#edit-profile-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* add modal */
+
+#add-profile-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    max-height: 90vh; /* Limit modal height to 90% of the viewport */
+    top: 55%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow-y: auto; /* Add vertical scroll when content overflows */
+    overflow-x: hidden; /* Prevent horizontal scrolling (optional) */
+    box-sizing: border-box; /* Ensure padding doesn't affect height */
+}
+
+
+#add-profile-modal.profile-active {
+    display: block;
+}
+
+#add-profile-modal input[type=text],
+#add-profile-modal input[type=number],
+#add-profile-modal input[type=date] {
+    padding: 8px;
+}
+
+#profile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#profile-overlay.profile-active {
+    display: block;
+}
+
+#add-profile-modal form input,
+#add-profile-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#add-profile-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#add-profile-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#profile-head-edit-delete-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#profile-edit-delete-btns {
+    display: inline;
+}
+
+
+
+
+/*----------------------x-Profile details section in profile css ends here by ankit----------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*----------------------x-Profile Summary  section in profile css starts here by ankit----------  */
+
+
+
+.summary-details {
+    background-color: #fff;
+    /* White background for clean look */
+    border: 1px solid #e0e0e0;
+    /* Light border for separation */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Reduced padding for tighter spacing */
+    margin: 20px auto;
+    /* Centered with automatic margins on left and right */
+    width: 100%;
+    /* Set a fixed width for better centering */
+    max-width: 100%;
+    /* Maximum width for large screens */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Deeper shadow for a more elevated effect */
+    font-family: 'Roboto', sans-serif;
+    /* More modern font */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
+}
+
+.summary-details:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow on hover */
+}
+
+/* Title of the summary details */
+.summary-details h3 {
+    font-size: 24px;
+    /* Adjusted font size */
+    color: #2c3e50;
+    /* Darker color for better readability */
+    margin-bottom: 15px;
+    /* Reduced margin between title and fields */
+    border-bottom: 3px solid #3498db;
+    /* Blue border for visual emphasis */
+    padding-bottom: 8px;
+    text-align: center;
+    /* Center the title */
+}
+
+.summary-details h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: left;
+    /* Header text aligned to the left */
+    font-weight: bold;
+}
+
+
+/* General paragraph styling for summary details */
+.summary-details p {
+    font-size: 16px;
+    /* Slightly smaller font for a more compact layout */
+    color: #7f8c8d;
+    /* Grayish color for text */
+    margin: 4px 0;
+    /* Reduced margin for compactness */
+    padding: 6px 0;
+    /* Reduced padding for compactness */
+    line-height: 1.4;
+    /* Adjusted line height for better spacing */
+}
+
+/* Label style for the summary fields (without strong tag) */
+.summary-details .label {
+    color: #34495e;
+    /* Darker text for field names */
+    font-weight: 600;
+    /* Slightly bolder for emphasis */
+    text-transform: uppercase;
+    /* Uppercase for better readability */
+    margin-right: 8px;
+    /* Reduced space between label and value */
+    display: inline-block;
+    /* Ensures labels are aligned better */
+    width: 35%;
+    /* Set width to control space for the label */
+}
+
+/* Value style for the summary fields */
+.summary-details p span {
+    color: #2c3e50;
+    /* Darker color for values */
+    font-weight: 400;
+    /* Lighter weight for value text */
+    width: 60%;
+    /* Set width for the value for better alignment */
+}
+
+/* Style for each summary field with a flex layout */
+.summary-details p {
+    display: flex;
+    justify-content: space-between;
+    /* Space out the label and value */
+    align-items: center;
+    /* Align items in the center */
+    border-bottom: 1px solid #ecf0f1;
+    /* Light border between fields */
+}
+
+/* Removing the border for the last field */
+.summary-details p:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect for each summary field */
+.summary-details p:hover {
+    background-color: #f1f1f1;
+    /* Light gray background on hover */
+    border-left: 5px solid #3498db;
+    /* Blue left border on hover */
+    padding-left: 12px;
+    /* Slight padding to match the border effect */
+}
+
+/* Optional icon styling */
+.summary-details p i {
+    margin-right: 12px;
+    /* Space between icon and text */
+    color: #3498db;
+    /* Blue icon color */
+}
+
+/* styles.css */
+
+/* summary Section Header and Button */
+.summary-details h3 {
+    display: inline-block;
+}
+
+#summaryDetails {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#summaryDetails h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#summaryDetails .edit-btn {
+    float: right;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#summaryDetails .edit-btn:hover {
+    background: #0056b3;
+}
+
+#summaryDetails .summary-details {
+    margin-top: 20px;
+}
+
+.summary-detail-row {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+}
+
+.summary-detail-row span {
+    font-size: 16px;
+}
+
+#edit-summary-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+#edit-summary-modal.summary-active {
+    display: block;
+}
+
+#edit-summary-modal input[type=text],
+#edit-summary-modal input[type=number],
+#edit-summary-modal input[type=date] {
+    padding: 8px;
+}
+
+#summary-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#summary-overlay.summary-active {
+    display: block;
+}
+
+#edit-summary-modal form input,
+#edit-summary-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#edit-summary-modal form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#edit-summary-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#edit-summary-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* add modal */
+
+#add-summary-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+#add-summary-modal.summary-active {
+    display: block;
+}
+
+#add-summary-modal input[type=text],
+#add-summary-modal input[type=number],
+#add-summary-modal input[type=date] {
+    padding: 8px;
+}
+
+#summary-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#summary-overlay.summary-active {
+    display: block;
+}
+
+#add-summary-modal form input,
+#add-summary-modal form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#add-summary-modal textarea {
+
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+}
+
+#add-summary-modal form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#add-summary-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#summary-head-edit-delete-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#summary-edit-delete-btns {
+    display: inline;
+}
+
+
+
+/*----------------------x-Profile details section in profile css ends here by ankit----------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+/*--------------------------------x--------------------------x----------------------------------  */
+
+
+
+
+
+
+
+
+/* The loading spinner design */
+#loading {
+    margin-left: 50%;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
