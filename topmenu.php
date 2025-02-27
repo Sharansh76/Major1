@@ -1,7 +1,7 @@
 <!-- Logged-out menu -->
 <a href="index.php" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
     <img src="img/logo.png" alt="logo" />
-    <h1 class="m-0 text-primary">BOOST TECH</h1>
+    <h1 class="m-0 text-primary">Global Hospital</h1>
 </a>
 
 <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -11,7 +11,7 @@
 <div class="collapse navbar-collapse" id="navbarCollapse">
     <div class="navbar-nav ms-auto p-4 p-lg-0">
         <a href="index.php" class="nav-item nav-link active">Home</a>
-        <a href="about_us.php" class="nav-item nav-link">About</a>
+        <a href="about.php" class="nav-item nav-link">About</a>
 
 
         <!-- <div class="nav-item dropdown">
@@ -26,9 +26,9 @@
                 <a href="404.html" class="dropdown-item">404</a>
             </div>
         </div> -->
-        <a href="contact_us.php" class="nav-item nav-link">Contact</a>
+        <a href="contact.php" class="nav-item nav-link">Contact</a>
         <!-- Login Button -->
-        <a href="login.php" class="nav-item nav-link text-light bg-primary" style="margin-right:0px;">Login/Sign In<i class="fa fa-arrow-right ms-3 text-light"></i></a>
+        <a href="signup.php" class="nav-item nav-link text-light bg-primary" style="margin-right:0px;">Login/Sign In<i class="fa fa-arrow-right ms-3 text-light"></i></a>
     </div>
 
 

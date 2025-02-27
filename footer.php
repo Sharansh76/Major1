@@ -18,9 +18,9 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Contact</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Sector - 78, Noida, UP, India</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-9911947944</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i> shweta@boosttech.in</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Sector - 78, New Delhi India</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-9998887766</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i> globalhospital@gmail.com</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -42,10 +42,10 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Boost Tech</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="#">global hospital</a>, All Right Reserved.
 
 
-                    Designed By <a class="border-bottom" href="">Boost Tech</a>
+                    Designed By <a class="border-bottom" href="">Global Hospital</a>
 
                 </div>
                 <div class="col-md-6 text-center text-md-end">
