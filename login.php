@@ -4,7 +4,7 @@ include('dbconnect.php');
 include('header.php');
 
 if (isset($_SESSION['patient_id'])) {
-    header("Location: index.php");
+    header("Location: profile.php");
     exit();
 }
 
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
         $errors['email'] = "Email is required";
     } else {
-        $email = $_POST["email"];
+        $email = trim($_POST["email"]);
     }
 
     if (empty($_POST["password"])) {
@@ -27,23 +27,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($errors)) {
-        $stmt = $conn->prepare("SELECT patient_id,first_name , last_name password FROM patients WHERE email = ?");
+        $stmt = $conn->prepare("SELECT patient_id, first_name, last_name, password FROM patients WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
 
-        if ($stmt->num_rows == 1) {
-            $stmt->bind_result($patient_id,  $db_password);
-            $stmt->fetch();
-             echo "$db_password";
+        if ($result->num_rows == 1) {
+            $user = $result->fetch_assoc();
+            $db_password = $user['password'];
+
             // Verify hashed password
             if (password_verify($password, $db_password)) {
-                // Store user details in session and redirect to a protected page
-                $_SESSION['patient_id'] = $patient_id;
-                $_SESSION['first_name'] = $first_name;
-                $_SESSION['last_name'] = $last_name;
-                header("Location: profile.php"); 
-                exit;
+                // Store user details in session
+                $_SESSION['patient_id'] = $user['patient_id'];
+                $_SESSION['first_name'] = $user['first_name'];
+                $_SESSION['last_name'] = $user['last_name'];
+
+                header("Location: profile.php");
+                exit();
             } else {
                 $errors['general'] = "Invalid email or password.";
             }
@@ -55,7 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 <div>
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
