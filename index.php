@@ -35,8 +35,8 @@ include 'header.php';
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-10 col-lg-8">
-                                    <h1 class="display-3 text-white animated slideInDown mb-4">Find The Perfect Job That You Deserved</h1>
-                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                    <h1 class="display-3 text-white animated slideInDown mb-4">Your Health, Managed Intelligently</h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">Empowering hospitals with AI-driven tools for better patient care and faster operations..</p>
                                     <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
                                     <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a>
                                 </div>
@@ -50,8 +50,8 @@ include 'header.php';
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-10 col-lg-8">
-                                    <h1 class="display-3 text-white animated slideInDown mb-4">Find The Best Startup Job That Fit You</h1>
-                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                    <h1 class="display-3 text-white animated slideInDown mb-4"></h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-2"> From patient registration and appointment scheduling to billing and staff coordination—everything is automated, secure, and user-friendly.</p>
                                     <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
                                     <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a>
                                 </div>
@@ -65,8 +65,8 @@ include 'header.php';
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-10 col-lg-8">
-                                    <h1 class="display-3 text-white animated slideInDown mb-4">Find The Best Startup Job That Fit You</h1>
-                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                    <h1 class="display-3 text-white animated slideInDown mb-4">Advanced surgical oprations  </h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">Now avaiable in north India .</p>
                                     <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
                                     <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a>
                                 </div>
@@ -131,26 +131,13 @@ include 'header.php';
                 <div class="row g-3">
                     <div class="col-md-4">
                         <div class="service-card d-flex align-items-center" style="height: 80px;">
-                        <a href="login.php" >
-                            <div class="service-content d-flex align-items-center">
-                                <i class="bi bi-clipboard-plus fs-3 me-2"></i>
-                                <h5 class="newbox">Schedule Appointment</h5>
-                                <i class="bi bi-arrow-up-right arrow-icon ms-auto"></i>
-                            </div>
-                            
-                        </a>
-                            
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-card d-flex align-items-center" style="height: 80px;">
-                            <div class="service-content d-flex align-items-center">
-                                <i class="ion-stethoscope-outline fs-3 me-2"></i>
-                                <h5 class="newbox">
-                                    <a href="contact.php" class="text-decoration-none text-dark">Find a Doctor</a>
-                                </h5>
-                            </div>
-                            <i class="ion-arrow-forward-outline arrow-icon ms-auto"></i>
+                            <a href="doctor.php" >
+                                <div class="service-content d-flex align-items-center">
+                                    <i class="bi bi-clipboard-plus fs-3 me-2"></i>
+                                    <h5 class="newbox">Schedule Appointment</h5>
+                                    <i class="bi bi-arrow-up-right arrow-icon ms-auto"></i>
+                                </div>
+                            </a>   
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -161,13 +148,27 @@ include 'header.php';
                                     <a href="contact.php" class="text-decoration-none text-dark">Contact Us</a>
                                 </h5>
                             </div>
-                            <i class="bi bi-arrow-up-right arrow-icon ms-auto"></i>
+                            <i class="ion-arrow-forward-outline arrow-icon ms-auto"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card d-flex align-items-center" style="height: 80px;">
+                            <a href="doctor_search.php" >
+                                <div class="service-content d-flex align-items-center">
+                                    <i class="bi bi-clipboard-plus fs-3 me-2"></i>
+                                    <h5 class="newbox">Search Doctor</h5>
+                                    <i class="bi bi-arrow-up-right arrow-icon ms-auto"></i>
+                                </div>
+                            </a> 
                         </div>
                     </div>
                 </div>
             </div>
         <!-- end new box -->
 
+        <!--  techonology  Start -->
+          <?php include 'technologies.php';?>
+        <!--  techonology  end  -->
 
         <!--  doctors Category Start -->
         <?php include 'category.php'; ?>
