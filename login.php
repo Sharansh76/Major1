@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($errors)) {
-        $stmt = $conn->prepare("SELECT patient_id, first_name, last_name, password FROM patients WHERE email = ?");
+        $stmt = $conn->prepare("SELECT patient_id, first_name, last_name, password FROM patients1 WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();

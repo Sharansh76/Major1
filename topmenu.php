@@ -28,7 +28,9 @@
         </div> -->
         <a href="contact.php" class="nav-item nav-link">Contact</a>
         <!-- Login Button -->
-        <a href="signup.php" class="nav-item nav-link text-light bg-primary" style="margin-right:0px;">Login/Sign In<i class="fa fa-arrow-right ms-3 text-light"></i></a>
+        <!-- <a href="signup.php" class="nav-item nav-link text-light bg-primary" style="margin-right:0px;">Login/Sign In<i class="fa fa-arrow-right ms-3 text-light"></i></a> -->
+        <a href="prjt1/index.php" class="nav-item nav-link text-light bg-primary" style="margin-right:0px;">Login/Sign In
+        <i class="fa fa-arrow-right ms-3 text-light"></i></a>
     </div>
 
 

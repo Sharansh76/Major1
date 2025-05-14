@@ -33,11 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['patsub1'])) {
 
     // Save to database if no errors
     if (empty($errors)) {
-        $stmt = $conn->prepare("INSERT INTO patients (patient_id, first_name, last_name, email, password, contact, gender) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO patients1 ( first_name, last_name, email, password, contact, gender) VALUES (?, ?, ?, ?, ?, ?)");
         $patient_id = uniqid();
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-        $stmt->bind_param("sssssss", $patient_id, $fname, $lname, $email, $hashed_password, $contact, $gender);
+        $stmt->bind_param("ssssss", $fname, $lname, $email, $hashed_password, $contact, $gender);
 
         if ($stmt->execute()) {
             $successMsg = "Sign-up successful! You can now <a href='login.php'>login</a>.";
@@ -352,7 +352,7 @@ function checklen()
                                         <div class="form-group">
                                             <input type="password" class="form-control" placeholder="Password *" name="password3" required/>
                                         </div>
-                                        
+                                        <!-- <button href="http://localhost/dashboard/HospitalManagementSystem/HospitalManagementSystem/admin-panel.php"> change</button> -->
                                         <input type="submit" class="btnRegister" name="docsub1" value="Login"/>
                                     </div>
                                 </div>
