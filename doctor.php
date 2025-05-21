@@ -38,11 +38,16 @@
                     <div class="col-md-4">
                         <div class="card border-0 shadow-sm h-100">
                             <img src="img/docimg/' . $photo . '" class="card-img-top" style="height: 300px; object-fit: cover;" alt="' . htmlspecialchars($name) . '">
+                            
                             <div class="card-body text-center">
                                 <h5 class="card-title fw-bold">' . htmlspecialchars($name) . '</h5>
                                 <p class="mb-1 text-primary">' . htmlspecialchars($specialization) . '</p>
                                 <small class="text-muted">' . htmlspecialchars($qualification) . '</small>
+                                <br><br>
+                                <a href="prjt1/index1.php" class="btn btn-primary mt-2">Book appointment</a>
                             </div>
+                                
+
                         </div>
                     </div>';
                 }

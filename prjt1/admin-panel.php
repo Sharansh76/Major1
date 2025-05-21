@@ -362,10 +362,16 @@ function get_specs(){
 
 
                         <script>
+              // document.getElementById('doctor').onchange = function updateFees(e) {
+              //   var selection = document.querySelector(`[value=${this.value}]`).getAttribute('data-value');
+              //   document.getElementById('docFees').value = selection;
+              // };
               document.getElementById('doctor').onchange = function updateFees(e) {
-                var selection = document.querySelector(`[value=${this.value}]`).getAttribute('data-value');
-                document.getElementById('docFees').value = selection;
+              var selectedOption = this.options[this.selectedIndex];
+              var fees = selectedOption.getAttribute('data-fees');
+              document.getElementById('docFees').value = fees ? fees : '500';
               };
+
             </script>
 
                   

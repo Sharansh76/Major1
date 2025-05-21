@@ -153,7 +153,7 @@ include 'header.php';
                     </div>
                     <div class="col-md-4">
                         <div class="service-card d-flex align-items-center" style="height: 80px;">
-                            <a href="doctor_search.php" >
+                            <a href="medicbot.php" >
                                 <div class="service-content d-flex align-items-center">
                                     <i class="bi bi-clipboard-plus fs-3 me-2"></i>
                                     <h5 class="newbox">Search Doctor</h5>
