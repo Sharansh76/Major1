@@ -11,14 +11,14 @@
 
             // Define the category-icon mapping
             $categoryIcons = [
-                'Allergist/Immunologist' => 'fa-mail-bulk',
-                'Cardiologist' => 'fa-book',
-                'Dentist' => 'fa-user-tie',
+                'Allergist/Immunologist' => 'fa-solid fa-bacteria',
+                'Cardiologist' => 'fa-solid fa-heart-pulse',
+                'Dentist' => 'fa-solid fa-tooth',
                 'Dermatologist' => 'fa-tasks',
                 'Endocrinologist' => 'fa-chart-line',
                 'ENT Specialist (Ear, Nose, Throat)' => 'fa-hands-helping',
                 'Gastroenterologist' => 'fa-chalkboard-teacher',
-                'General Physician' => 'fa-palette',
+                'General Physician' => 'fa-solid fa-stethoscope',
                  // Default icon for Uncategorized
                 // Add more categories and icons as needed
             ];

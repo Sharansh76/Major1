@@ -37,8 +37,8 @@ include 'header.php';
                                 <div class="col-10 col-lg-8">
                                     <h1 class="display-3 text-white animated slideInDown mb-4">Your Health, Managed Intelligently</h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">Empowering hospitals with AI-driven tools for better patient care and faster operations..</p>
-                                    <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
-                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a>
+                                    <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
+                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a> -->
                                 </div>
                             </div>
                         </div>
@@ -52,8 +52,8 @@ include 'header.php';
                                 <div class="col-10 col-lg-8">
                                     <h1 class="display-3 text-white animated slideInDown mb-4"></h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2"> From patient registration and appointment scheduling to billing and staff coordination—everything is automated, secure, and user-friendly.</p>
-                                    <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
-                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a>
+                                    <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
+                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a> -->
                                 </div>
                             </div>
                         </div>
@@ -67,8 +67,8 @@ include 'header.php';
                                 <div class="col-10 col-lg-8">
                                     <h1 class="display-3 text-white animated slideInDown mb-4">Advanced surgical oprations  </h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">Now avaiable in north India .</p>
-                                    <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
-                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a>
+                                    <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
+                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a> -->
                                 </div>
                             </div>
                         </div>
@@ -80,10 +80,13 @@ include 'header.php';
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-10 col-lg-8">
-                                    <h1 class="display-3 text-white animated slideInDown mb-4">Find The Best Startup Job That Fit You</h1>
-                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                    <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
-                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a>
+                                    <h1 class="display-3 text-white animated slideInDown mb-4">HOSPITAL MAMAGEMENT SYSTEM</h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">We care about your health.
+                                        <br>
+                                        Best Hospitality servies in your town 
+                                    </p>
+                                    <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
+                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a> -->
                                 </div>
                             </div>
                         </div>
@@ -134,6 +137,7 @@ include 'header.php';
                             <a href="doctor.php" >
                                 <div class="service-content d-flex align-items-center">
                                     <i class="bi bi-clipboard-plus fs-3 me-2"></i>
+                                    <!-- <i class="fa-solid fa-calendar-check"></i> -->
                                     <h5 class="newbox">Schedule Appointment</h5>
                                     <i class="bi bi-arrow-up-right arrow-icon ms-auto"></i>
                                 </div>

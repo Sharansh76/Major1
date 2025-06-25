@@ -1,17 +1,17 @@
 <?php include 'header.php'; ?>
 <div class="container-xxl bg-white p-0">
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <?php
+        // session_start();
         if (isset($_SESSION['candidate_id'])) {
-            // If 'candidate_id' exists in session, include 'top_menu.php'
             include 'top_menu.php';
         } else {
-            // If 'candidate_id' does not exist, include 'topmenu.php'
             include 'topmenu.php';
         }
         ?>
-        </nav>
+    </nav>
 
     <!-- Doctors Section -->
     <div class="container py-5">
@@ -29,6 +29,7 @@
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
+                    $id = $row['id'];
                     $name = $row['name'];
                     $specialization = $row['specialization'];
                     $qualification = $row['qualification'];
@@ -44,10 +45,8 @@
                                 <p class="mb-1 text-primary">' . htmlspecialchars($specialization) . '</p>
                                 <small class="text-muted">' . htmlspecialchars($qualification) . '</small>
                                 <br><br>
-                                <a href="prjt1/index1.php" class="btn btn-primary mt-2">Book appointment</a>
+                                <a href="doctor_detail.php?id=' . $id . '" class="btn btn-primary mt-2">View Profile</a>
                             </div>
-                                
-
                         </div>
                     </div>';
                 }
@@ -59,9 +58,8 @@
     </div>
 
     <!-- Footer -->
-    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <?php
-        include 'footer.php';
-        ?>
-        </div>
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+        <?php include 'footer.php'; ?>
+    </div>
+
 </div>

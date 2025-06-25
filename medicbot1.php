@@ -44,15 +44,15 @@ $doctorHTML = "";
 if ($step === 1) {
     $nextQuestion = "Hello! I'm Dr. HealthBot, your virtual assistant. May I know your full name, please?";
 } elseif ($step === 2) {
-    $nextQuestion = "Thank you, {$data[0]}. Can you please tell me your age?";
+    $nextQuestion = "Thank you, {$data[0]}! Could you please tell me your age?";
 } elseif ($step === 3) {
-    $nextQuestion = "Noted. What is your gender? (Male / Female / Other)";
+    $nextQuestion = "Got it. And what is your gender? (Male / Female / Other)";
 } elseif ($step === 4) {
-    $nextQuestion = "Could you briefly describe the primary health issue you're experiencing today?";
+    $nextQuestion = "Thanks! Can you briefly describe the main health issue you're facing today?";
 } elseif ($step === 5) {
-    $nextQuestion = "Understood. What is the first symptom you’ve noticed?";
+    $nextQuestion = "I see. What is the first symptom you've noticed?";
 } elseif ($step === 6) {
-    $nextQuestion = "Thank you. Are you experiencing a second symptom? (Yes / No)";
+    $nextQuestion = "Thank you. Are you experiencing a second symptom as well? (Yes / No)";
 } elseif ($step === 7) {
     if (strtolower($data[5]) === 'yes') {
         $nextQuestion = "Please describe the second symptom.";
@@ -66,21 +66,23 @@ if ($step === 1) {
         $nextQuestion = "Got it. Approximately how long have you been experiencing these symptoms?";
     }
 } elseif ($step === 9) {
-    $nextQuestion = "Have you taken any medication or home remedy for this? (Yes / No)";
+    $nextQuestion = "Have you taken any medication or tried any home remedies for this? (Yes / No)";
 } elseif ($step === 10) {
     if (strtolower($data[7]) === 'yes') {
-        $nextQuestion = "Could you please mention the name of the medication and whether it provided any relief?";
+        $nextQuestion = "Could you mention the name of the medication and whether it helped relieve your symptoms?";
     } else {
-        $nextQuestion = "No problem. It's good to assess symptoms first. Do you have any known allergies or medical conditions like diabetes, asthma, or hypertension? (Yes / No)";
+        $nextQuestion = "No worries. It's good to understand the symptoms clearly first. Do you have any known allergies or conditions like diabetes, asthma, or high blood pressure? (Yes / No)";
     }
 } elseif ($step === 11) {
     if (strtolower($data[8]) === 'yes') {
-        $nextQuestion = "Please list the medical conditions or allergies you are aware of.";
+        $nextQuestion = "Please list any medical conditions or allergies you're aware of.";
     } else {
-        $nextQuestion = "Thank you for confirming that. Based on the information provided, I’ll suggest a specialist for you.";
+        $nextQuestion = "Thanks for confirming. Based on what you've shared, I'll recommend a specialist for you shortly.";
     }
 } elseif ($step === 12) {
     $symptoms = array_map('strtolower', array_slice($data, 4, 3));
+    // Proceed with symptom analysis and specialist suggestion
+
 
     // Example matching logic (expandable)
     if (in_array('chest pain', $symptoms) || in_array('shortness of breath', $symptoms)) {
@@ -169,6 +171,7 @@ if ($step === 1) {
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <?php
+        // session_start();
         if (isset($_SESSION['candidate_id'])) {
             include 'top_menu.php';
         } else {
@@ -189,15 +192,15 @@ if ($step === 1) {
             background-size: cover;
             min-height: 110vh;
             display: flex;
-            justify-content: center;   /* Center horizontally */
-            padding: 60px 15px;        /* Add vertical spacing */
+            justify-content: center;
             align-items: center;
+            padding: 60px 15px;
         }
 
         .chat-container {
             width: 100%;
             max-width: 700px;
-            background: rgba(255, 255, 255, 0.95); /* Light transparency for readability */
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
@@ -231,51 +234,67 @@ if ($step === 1) {
             float: right;
         }
 
-        .doctor-section {
-            background: #f8f9fa;
-        }    
         .chat-box::after {
             content: "";
             display: block;
             clear: both;
         }
-        form {
-    margin-top: 10px;
-}
 
+        form {
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .chat-background {
+                flex-direction: column;
+                padding: 30px 15px;
+            }
+        }
     </style>
 
-    <!-- Background + Chat Container -->
+    <!-- Chat Section with Image -->
     <div class="chat-background">
-        <div class="chat-container">
-            <h3 class="text-center">
-                <i class="bi bi-robot" style="color: blue;"></i> Welcome to MedicBot
-            </h3>
-            <div class="chat-box" id="chatBox">
-                <?php
-                foreach ($_SESSION['conversation'] as $msg) {
-                    echo '<div class="chat-message ' . ($msg['sender'] === 'MedicBot' ? 'bot' : 'user') . '">' . nl2br($msg['message']) . '</div>';
-                }
-                if (!empty($nextQuestion)) {
-                    addConversation('MedicBot', $nextQuestion);
-                    echo '<div class="chat-message bot">' . $nextQuestion . '</div>';
-                }
-                ?>
+        <div class="row w-100 align-items-center">
+            <!-- Left Image -->
+            <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+                <img src="img/medicbot1.png" alt="Medic Info" class="img-fluid rounded shadow" style="max-height: 450px;">
             </div>
 
-            <?php if (empty($_SESSION['completed'])): ?>
-                <form method="post">
-                    <div class="form-group" class="d-flex gap-2">
-                        <input type="text" name="response" class="form-control" placeholder="Type your answer..." required autofocus>
+            <!-- Right Chat -->
+            <div class="col-md-6">
+                <div class="chat-container">
+                    <h3 class="text-center">
+                        <i class="bi bi-robot" style="color: blue;"></i> Welcome to MedicBot
+                    </h3>
+                    <div class="chat-box" id="chatBox">
+                        <?php
+                        // Display conversation
+                        if (!isset($_SESSION['conversation'])) $_SESSION['conversation'] = [];
+                        foreach ($_SESSION['conversation'] as $msg) {
+                            echo '<div class="chat-message ' . ($msg['sender'] === 'MedicBot' ? 'bot' : 'user') . '">' . nl2br($msg['message']) . '</div>';
+                        }
+                        if (!empty($nextQuestion)) {
+                            $_SESSION['conversation'][] = ['sender' => 'MedicBot', 'message' => $nextQuestion];
+                            echo '<div class="chat-message bot">' . $nextQuestion . '</div>';
+                        }
+                        ?>
                     </div>
-                    <button class="btn btn-primary btn-block">Send</button>
-                </form>
-            <?php else: ?>
-                <?php echo $doctorHTML; ?>
-                <div class="text-center mt-4">
-                    <a href="medicbot.php?reset=true" class="btn btn-success">Start New Chat</a>
+
+                    <?php if (empty($_SESSION['completed'])): ?>
+                        <form method="post">
+                            <div class="form-group">
+                                <input type="text" name="response" class="form-control" placeholder="Type your answer..." required autofocus>
+                            </div>
+                            <button class="btn btn-primary btn-block">Send</button>
+                        </form>
+                    <?php else: ?>
+                        <?php echo $doctorHTML ?? ''; ?>
+                        <div class="text-center mt-4">
+                            <a href="medicbot.php?reset=true" class="btn btn-success">Start New Chat</a>
+                        </div>
+                    <?php endif; ?>
                 </div>
-            <?php endif; ?>
+            </div>
         </div>
     </div>
 
@@ -298,4 +317,5 @@ if ($step === 1) {
         chatBox.scrollTop = chatBox.scrollHeight;
     };
 </script>
+
 
